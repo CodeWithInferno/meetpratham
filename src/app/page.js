@@ -5,7 +5,9 @@ import Image from 'next/image';
 import Footer from './Components/Footer';
 import { Fade } from 'react-awesome-reveal';
 
+
 function App() {
+
   return (
     <div className="bg-white text-black min-h-screen">
       <Fade>
@@ -31,15 +33,15 @@ function App() {
         <Fade>
           <Image src="/D_1.3.1.jpg" alt="Image 4" width={700} height={300} />
         </Fade>
-        <div className="col-span-2 grid grid-cols-3 gap-1">
+        <div className="col-span-2 grid grid-cols-3 gap-1 mx-0">
           <Fade>
-            <Image src="/E_1.76.1.jpg" alt="Image 5" width={400} height={300} />
+            <Image src="/E_1.76.1.jpg" alt="Image 5" width={500} height={300} />
           </Fade>
           <Fade>
-            <Image src="/F_1.2.1.jpg" alt="Image 6" width={400} height={300} />
+            <Image src="/F_1.2.1.jpg" alt="Image 6" width={500} height={300} />
           </Fade>
           <Fade>
-            <Image src="/G_1.93.1.jpg" alt="Image 7" width={400} height={300} />
+            <Image src="/G_1.93.1.jpg" alt="Image 7" width={500} height={300} />
           </Fade>
         </div>
         <Fade>
