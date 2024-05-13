@@ -1,15 +1,9 @@
-
-
 import React, { useState } from 'react';
 import { FaInstagram, FaSnapchat, FaBars, FaTimes } from 'react-icons/fa';
-import { useRouter } from 'next/navigation/'
-
+import Link from 'next/link'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter()
-
-
 
   return (
     <>
@@ -21,9 +15,9 @@ const Header = () => {
         </button>
       </div>
       <div className="hidden lg:flex space-x-4 text-2xl font-normal mr-48">
-        <button type="button" onClick={() => router.push('/wallpapers')}  className="hover:underline text-sm">Wallpapers</button>
-        <button type="button" onClick={() => router.push('/workingon')}  className="hover:underline text-sm">Projects</button>
-        <button type="button" onClick={() => router.push('/dashboard')}  className="hover:underline text-sm">GitHub</button>
+        <Link href="/wallpapers"><a>Wallpapers</a></Link>
+        <Link href="/workingon"><a>Projects</a></Link>
+        <Link href="/dashboard"><a>GitHub</a></Link>
         <FaInstagram />
         <FaSnapchat />
         
@@ -32,9 +26,9 @@ const Header = () => {
       {isOpen && (
         <div className="fixed inset-0 z-20 flex items-center justify-center bg-white">
           <div className="flex flex-col items-center space-y-4 mt-10 text-base font-normal">
-            <button type="button" onClick={() => router.push('/wallpapers')}  className="hover:underline text-sm">Wallpapers</button>
-            <button type="button" onClick={() => router.push('/workingon')}  className="hover:underline text-sm">Projects</button>
-            <button type="button" onClick={() => router.push('/dashboard')}  className="hover:underline text-sm">Working on</button>
+            <Link href="/wallpapers"><a>Wallpapers</a></Link>
+            <Link href="/workingon"><a>Projects</a></Link>
+            <Link href="/dashboard"><a>Working on</a></Link>
             <FaInstagram />
             <FaSnapchat />
           </div>
@@ -44,7 +38,7 @@ const Header = () => {
         </div>
       )}
     </header>
-          <div className="border-b-2 border-gray-200 my-4 mx-10"></div>
+          <div className="border-b-2 border-gray-200 mt-1 mb-4 mx-10"></div>
 </>
     
   );

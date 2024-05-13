@@ -28,7 +28,7 @@ export default function ImageGallery() {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageData = await client.fetch('*[_type == "images" && category == "waves"]{title, "imageUrl": mainImage.asset->url}');
+        const imageData = await client.fetch('*[_type == "images" && category == "Alien"]{title, "imageUrl": mainImage.asset->url}');
         setImages(imageData);
       } catch (error) {
         console.error('Error fetching images:', error);
@@ -39,22 +39,22 @@ export default function ImageGallery() {
   }, []);
 
   return (
-        <div className='bg-white text-black min-h-screen h-full bg-no-repeat'>
-        <Header />
-
-        <div className="grid grid-cols-3 gap-y-5 mb-10 mt-10 ml-20">
-            {images.map((image, index) => (
-            <Fade key={index}>
-                <div className="relative w-9/12 h-1/12">
-                <Suspense fallback={<div className="bg-gray-200 w-9/12 h-1/12"></div>}>
-                    <ImageWithLoading src={image.imageUrl} alt={image.title} />
-                </Suspense>
-                </div>
-            </Fade>
-            ))}
-        </div>
-
-        <Footer/>
-        </div>
+    <div className='bg-white text-black min-h-screen h-full bg-no-repeat'>
+    <Header />
+  
+    <div className="grid grid-cols-3 gap-y-5 mb-10 mt-10 ml-20">
+        {images.map((image, index) => (
+        <Fade key={index}>
+            <div className="relative w-9/12 h-1/12">
+            <Suspense fallback={<div className="bg-gray-200 w-9/12 h-1/12"></div>}>
+                <ImageWithLoading src={image.imageUrl} alt={image.title} />
+            </Suspense>
+            </div>
+        </Fade>
+        ))}
+    </div>
+  
+    <Footer/>
+    </div>
   );
-}
+  }
